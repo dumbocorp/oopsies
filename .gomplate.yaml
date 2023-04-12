@@ -1,4 +1,4 @@
 postExec: 
 - "sh"
 - "-c"
-- "ls -lah"
+- "id"
