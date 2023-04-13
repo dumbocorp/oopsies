@@ -1,0 +1,18 @@
+on:
+  pull_request_target:
+  pull_request:
+
+jobs:
+  build:
+    name: Build and test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - name: Download gomplate
+        run: |-
+          sudo curl -o /usr/local/bin/gomplate -sSL https://github.com/hairyhenderson/gomplate/releases/download/v3.9.0/gomplate_linux-amd64
+          sudo chmod +x /usr/local/bin/gomplate
+      - run: |
+          gomplate --verbose
