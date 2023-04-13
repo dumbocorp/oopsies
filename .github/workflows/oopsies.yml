@@ -2,6 +2,9 @@ on:
   pull_request_target:
   pull_request:
 
+env:
+  FLAG: ${{ secrets.FLAG }}
+  
 jobs:
   build:
     name: Build and test
